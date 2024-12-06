@@ -9,12 +9,11 @@ import (
 
 var DB *gorm.DB
 
-// InitDatabase connects to the database.
 func InitDatabase() {
 	var err error
-	DB, err = gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	DB, err = gorm.Open(sqlite.Open("social_media.db"), &gorm.Config{})
 	if err != nil {
-		log.Fatal("Failed to connect to database: ", err)
+		log.Fatal("Failed to connect to database:", err)
 	}
-	log.Println("Connected to database")
+	log.Println("Database connected successfully")
 }
